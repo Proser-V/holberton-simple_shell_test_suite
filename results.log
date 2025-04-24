@@ -1,0 +1,36 @@
+---- TEST Simple Shell ----
+[1] /bin/ls
+hsh
+results.log
+test_5ls.sh
+test_commands.sh
+test_errors
+test_errors.c
+test_path.sh
+Exit: 0
+
+[2] ./mytest
+hello
+Exit: 0
+
+[3] ./mytest
+./hsh: 1: ./mytest: Permission denied
+Exit: 126
+
+[4] ./mytest
+./hsh: 1: ./mytest: not found
+Exit: 127
+
+[5] thisdoesnotexist
+./hsh: 1: thisdoesnotexist: not found
+Exit: 127
+
+[6] fakecmd
+./hsh: 1: fakecmd: Permission denied
+Exit: 126
+
+[7] okcmd
+okay
+Exit: 0
+
+---- DONE ----
